@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6 m-auto">
+            <h1 class="text-center display-4 my-4 mb-12">Chat E-Commerce</h1>
+            <form action="" id="form">
+              <div class="custom-text mb-3">
+                <input type="text" name="text" id="input-token" class="custom-text-input display-block w-100" placeholder="Type User Token">
+              </div>
+              <div class="custom-text mb-3">
+                <input type="text" name="text" id="input-message" class="custom-text-input display-block w-100" placeholder="Type Message">
+              </div>
+              <input type="submit" value="Submit" class="btn btn-primary btn-block w-100">
+            </form>
+            <hr>
+
+            <ul id="messages"></ul>
+ 
+          </div>
+        </div>
+      </div>
+
+
+
+    <script src="/socket.io/socket.io.js" ></script>
+    <script>
+        const socket = io();
+        const form = document.getElementById('form');
+        const inputToken = document.getElementById('input-token');
+        const inputMessage = document.getElementById('input-message');
+        let messages = document.getElementById('messages')
+
+        form.addEventListener('submit', (event)=> {
+            event.preventDefault();
+            if(inputToken.value && inputMessage.value) {
+                socket.emit('new-message', {
+                    message: inputMessage.value,
+                    token: inputToken.value,
+                });
+                // inputToken.value = '';
+                // inputMessage.value = '';
+            }
+        });
+
+        socket.on('resp-message', (obj)=> {
+
+          if(obj.message[0].stock) {
+            
+            obj.message.map( e => {
+              document.getElementById('messages').innerHTML += `The product ${e.name} has a stock of ${e.stock} ` + "<br>" ;
+            })
+          } else{
+            document.getElementById('messages').innerHTML += 'Hola! No he podido comprender tu mensaje. Por favor ingresa una de las seguientes opciones:\n\n 1: Stock\n\n 2: Orden \n\n 3:Carrito';
+          }
+          
+          console.log(obj.message); 
+
+          
+        })
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>
