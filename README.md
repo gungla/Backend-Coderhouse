@@ -135,7 +135,7 @@
 
 ### Chat
 
-Obtein user token fir use de chat
+You need the user token for use de chat
 > Ver : [http://localhost:3001]
 
 
