@@ -25,12 +25,12 @@ router.post('/upload', verifyTokenAdmin, upload.single('file'), async (req, res)
       return res.send('You must select a file.');
     }
     const product = await ProductsService.getOne(idProduct.toString());
-    if (!product) res.status(400).json({ message: 'Product not found.' });
+    if (!product) res.status(401).json({ message: 'Product not found.' });
     product.images.push(req.file.id);
     product.save();
     return res.status(201).json({ product, file: req.file });
   } catch (error) {
-    res.status(400).json({ message: error });
+    res.status(401).json({ message: error });
   }
 });
 
@@ -52,14 +52,14 @@ router.delete('/:id', verifyTokenAdmin, async (req, res) => {
     // await gfs.files.deleteOne({ _id: idImage });
     const products = await ProductsService.getAll();
     const prod = products.filter((product) => product.images.includes(idImage.toString()));
-    if (!prod) res.status(400).json({ message: 'Image not found.' });
+    if (!prod) res.status(401).json({ message: 'Image not found.' });
     const productToUpdate = await ProductsService.getOne(prod[0]._id);
     const imagesArray = productToUpdate.images.filter((id) => id.toString() !== idImage.toString());
     productToUpdate.images = imagesArray;
     productToUpdate.save();
     res.status(200).json({ message: 'Image deleted.', updatedProduct: productToUpdate });
   } catch (error) {
-    res.status(400).json({ message: 'Error while deleting the image.' });
+    res.status(401).json({ message: 'Error while deleting the image.' });
   }
 });
 

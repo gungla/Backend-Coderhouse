@@ -17,7 +17,7 @@ module.exports = {
       const cart = carts.filter((e) => (e.user_id.toString() === idUser));
       res.status(200).json(cart);
     } catch (error) {
-      res.status(400).json(error);
+      res.status(401).json(error);
     }
   },
   getAllCarts: async (req, res) => {
@@ -26,7 +26,7 @@ module.exports = {
       if (!carts) res.status(400).json({ message: 'Carts not found.' });
       res.status(200).json(carts);
     } catch (error) {
-      res.status(400).json(error);
+      res.status(401).json(error);
     }
   },
   addProductToCart: async (req, res) => {
@@ -50,7 +50,7 @@ module.exports = {
 
       res.status(200).json(updatedCart);
     } catch (error) {
-      res.status(400).json(error);
+      res.status(401).json(error);
     }
   },
   deleteProductFromCart: async (req, res) => {
@@ -86,7 +86,7 @@ module.exports = {
       anotherCart.save();
       res.status(200).json(resCart);
     } catch (error) {
-      res.status(400).json(error);
+      res.status(401).json(error);
     }
   },
   submit: async (req, res) => {
@@ -126,7 +126,7 @@ module.exports = {
         { new: true });
       res.status(200).json(createdOrder);
     } catch (error) {
-      res.status(400).json(error);
+      res.status(401).json(error);
     }
   },
 };

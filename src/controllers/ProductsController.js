@@ -7,7 +7,7 @@ module.exports = {
       const products = await ProductsService.getAll();
       res.status(200).json(products);
     } catch (error) {
-      res.status(400).json(error);
+      res.status(401).json(error);
     }
   },
   getProductsByCategory: async (req, res) => {
@@ -17,7 +17,7 @@ module.exports = {
       if (!products) return res.status(404).json({ message: 'Products not found.' });
       res.status(200).json(products);
     } catch (error) {
-      res.status(400).json(error);
+      res.status(401).json(error);
     }
   },
   create: async (req, res) => {
@@ -26,7 +26,7 @@ module.exports = {
       const newProduct = await ProductsService.create(body);
       res.status(201).json(newProduct);
     } catch (error) {
-      res.status(400).json(error);
+      res.status(401).json(error);
     }
   },
   update: async (req, res) => {
@@ -39,7 +39,7 @@ module.exports = {
       const modifiedProduct = await ProductsService.update(product, body);
       res.status(200).json(modifiedProduct);
     } catch (error) {
-      res.status(400).json(error);
+      res.status(401).json(error);
     }
   },
   delete: async (req, res) => {
@@ -50,7 +50,7 @@ module.exports = {
       await ProductsService.delete(id);
       res.status(204).json({});
     } catch (error) {
-      res.status(400).json(error);
+      res.status(401).json(error);
     }
   },
 };
