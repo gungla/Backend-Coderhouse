@@ -1,5 +1,11 @@
+## API RESTful
+
+- Run `npm install` to rebuild Node modules
+- To run the server in dev mode `npm run dev`
+
 ## Configurar .env
 
+-PORT=3001
 - MONGO_URI= url a db
 - JWT_SECRET=shhhhhhhhhhh
 
