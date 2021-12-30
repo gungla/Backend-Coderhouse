@@ -3,11 +3,6 @@
 - MONGO_URI= url a db
 - JWT_SECRET=shhhhhhhhhhh
 
-# Documentación
-
-> Ver : [documentación postman](https://github.com/gungla/Backend-Coderhouse/tree/main/postman)
-
-
 ## ENDPOINTS
 
 ### Users
@@ -140,7 +135,8 @@
 
 ### Chat
 
-> Ver : [test online](http://localhost:3001/)
+Obtein user token fir use de chat
+> Ver : [http://localhost:3001]
 
 
 ### Documentación
