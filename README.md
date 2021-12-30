@@ -1,8 +1,16 @@
-To run the application locally or on a server, see the .envExample file for the the environmental variables to be set. 
+## Configurar .env
 
-For testing purposes in VS Code, the extension Rest Client can be installed: https://marketplace.visualstudio.com/items?itemName=humao.rest-client. The file api.calls.http can be used to test the endpoints locally and the file api.calls.production.http when the application runs on a server.
+- MONGO_URI= url a db
+- JWT_SECRET=shhhhhhhhhhh
 
-***ENDPOINTS***
+# Documentación
+
+> Ver : [documentación postman](https://github.com/gungla/Backend-Coderhouse/tree/main/postman)
+
+
+## ENDPOINTS
+
+### Users
 
 @route GET /api/users
 @desc Lists all users, requires auth
@@ -43,6 +51,8 @@ For testing purposes in VS Code, the extension Rest Client can be installed: htt
 
 }
 
+### Products
+
 @route GET /api/products 
 @desc Responds with a list of all the products.
 
@@ -75,6 +85,8 @@ For testing purposes in VS Code, the extension Rest Client can be installed: htt
 @route DELETE /api/products/:id
 @desc Deletes a product. Requires auth. 
 
+### Cart
+
 @route GET /api/cart
 @desc Gets the users cart. Requires an authorization token.
 
@@ -85,7 +97,7 @@ For testing purposes in VS Code, the extension Rest Client can be installed: htt
 @desc Adds a product to the user's cart. Requires an authorization token. Content-type: json.
 
 {
-    "product_id": "61005f9b0210d10fcdd335b5",
+    "product_id": "61cdc38918876711408c7d8a",
     "quantity": 1
 }
 
@@ -93,12 +105,14 @@ For testing purposes in VS Code, the extension Rest Client can be installed: htt
 @desc Deletes a product from the user's cart. Requires an authorization token. Content-type: json.
 
 {
-    "product_id": "61005f9b0210d10fcdd335b5",
+    "product_id": "61cdc38918876711408c7d8a",
     "quantity": 1
 }
 
 @route POST /api/cart/submit
 @desc Submits a cart. Requires an authorization token.
+
+### Orders
 
 @route GET /api/orders
 @desc Gets all the orders of the user. Requires an authorization token.
@@ -110,10 +124,12 @@ For testing purposes in VS Code, the extension Rest Client can be installed: htt
 @desc Changes the state of one the orders to 'FINALIZED'. Requires an authorization token and id in the body. Content-type: json.
 
 {
-    "id": "6105b6e012004311411abcff"
+    "id": "61cddade18876711408c7dfa"
 }
 
-@route POST /api/image/upload?idproduct=6105b6e012004311411abcff
+### Image 
+
+@route POST /api/image/upload?idproduct=61cddade18876711408c7dfa
 @desc Uploads an image of a product. Requires an authorization token, a query parameter and file in png or jpeg format.
 
 @route GET /api/image/:id
@@ -121,4 +137,13 @@ For testing purposes in VS Code, the extension Rest Client can be installed: htt
 
 @route DELETE /api/image/:id
 @desc DELETES the image and updates the image reference in the respective product. Requires an authorization token. 
+
+### Chat
+
+> Ver : [test online](http://localhost:3001/)
+
+
+### Documentación
+
+> Ver : [documentación postman](https://github.com/gungla/Backend-Coderhouse/tree/main/postman)
 
