@@ -12,18 +12,24 @@
         <div class="row">
           <div class="col-md-6 m-auto">
             <h1 class="text-center display-4 my-4 mb-12">Chat E-Commerce</h1>
+            <div class="custom-text mb-3" style="width: 100%; background-color: aqua; word-wrap: break-word; padding: 4px;">
+              <small>
+                <b>Token ejemplo</b>
+                eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNkZWUzMDk2Mzc5NTFjZDBkMzYxNGIiLCJmaXJzdF9uYW1lIjoiam9obiIsImVtYWlsIjoiam9obkBlbWFpbC5jb20iLCJhZG1pbiI6ZmFsc2UsImlhdCI6MTY0MDg5MzczOH0.l47unhRhvevxf80Ipf5k3A5qbbyXGYn_yrpYCFDflhY
+              </small>
+            </div>
             <form action="" id="form">
               <div class="custom-text mb-3">
-                <input type="text" name="text" id="input-token" class="custom-text-input display-block w-100" placeholder="Type User Token">
+                <input type="text" name="text" id="input-token" class="custom-text-input display-block w-100" placeholder="Type User Token" required>
               </div>
               <div class="custom-text mb-3">
-                <input type="text" name="text" id="input-message" class="custom-text-input display-block w-100" placeholder="Type Message">
+                <input type="text" name="text" id="input-message" class="custom-text-input display-block w-100" placeholder="Type Message" required>
               </div>
               <input type="submit" value="Submit" class="btn btn-primary btn-block w-100">
             </form>
             <hr>
 
-            <ul id="messages"></ul>
+            <ul style="margin: 0; padding: 0;" id="messages"></ul>
  
           </div>
         </div>
@@ -56,11 +62,14 @@
           if(obj.message[0].stock) {
             
             obj.message.map( e => {
-              document.getElementById('messages').innerHTML += `The product ${e.name} has a stock of ${e.stock} ` + "<br>" ;
+              document.getElementById('messages').innerHTML += "<p style='background: skyblue; color: black; padding:6px; font-size: 12px'>" + `SYSTEM - The product ${e.name} has a stock of ${e.stock} ` + "<p>";
             })
+
           } else{
-            document.getElementById('messages').innerHTML += 'Hola! No he podido comprender tu mensaje. Por favor ingresa una de las seguientes opciones:\n\n 1: Stock\n\n 2: Orden \n\n 3:Carrito';
+            document.getElementById('messages').innerHTML += "<p style='background: black; color: white; padding:6px; font-size: 12px'>" + 'SYSTEM - Hola! No he podido comprender tu mensaje. Por favor ingresa una de las seguientes opciones:\n\n 1: Stock\n\n 2: Orden \n\n 3:Carrito' + "<p>";
           }
+
+          document.getElementById('messages').innerHTML +=  "<p style='background: blue; color: white; padding:6px; font-size: 12px'>" + `USER - ${inputMessage.value}` + "<p>";
           
           console.log(obj.message); 
 
