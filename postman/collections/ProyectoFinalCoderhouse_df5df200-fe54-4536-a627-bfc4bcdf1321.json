@@ -1,0 +1,903 @@
+{
+    "info": {
+        "_postman_id": "fc968f6c-9db7-41dc-9772-e63a22a2c004",
+        "name": "ProyectoFinalCoderhouse",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "User",
+            "item": [
+                {
+                    "name": "create new user admin",
+                    "id": "8fab39ff-841c-4d71-922b-6a290ed90e51",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"first_name\": \"admin\",\n    \"last_name\": \"coder\",\n    \"email\": \"kenyon.price7@ethereal.email\",\n    \"password\": \"b46Rr5MJTMAbKsvEHj\",\n    \"confirm_password\": \"b46Rr5MJTMAbKsvEHj\",\n    \"phone\": \"1111111111\",\n    \"admin\": true,\n    \"address\": {\n        \"street\": \"Street Name\",\n        \"height\": \"111\",\n        \"postal_code\": \"111111\"\n    }\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:3001/api/signup",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001",
+                            "path": [
+                                "api",
+                                "signup"
+                            ]
+                        },
+                        "description": "@route POST /api/signup \n@desc creates a new user, for testing purpose allows to create an admin. Content-type: json. "
+                    },
+                    "response": []
+                },
+                {
+                    "name": "create new user",
+                    "id": "2b45d67a-9c17-4bc3-9d10-3e6fda64a43c",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"first_name\": \"john\",\n    \"last_name\": \"doe\",\n    \"email\": \"john@email.com\",\n    \"password\": \"john\",\n    \"confirm_password\": \"john\",\n    \"phone\": \"1111111111\",\n    \"admin\": false,\n    \"address\": {\n        \"street\": \"Street Name\",\n        \"height\": \"111\",\n        \"postal_code\": \"111111\"\n    }\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:3001/api/signup",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001",
+                            "path": [
+                                "api",
+                                "signup"
+                            ]
+                        },
+                        "description": "@route POST /api/signup \n@desc creates a new user, for testing purpose allows to create an admin. Content-type: json. "
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Login admin",
+                    "id": "a82621e0-eaca-48e0-8190-c9f2cf0b7ffe",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNkYzM4OTE4ODc2NzExNDA4YzdkODgiLCJmaXJzdF9uYW1lIjoiRmlyc3QgTmFtZSIsImVtYWlsIjoiZW1haWxAZW1haWwuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTY0MDg3NjEwOH0.DMHGYCbFNEh_z5ikL4GfZjSVBO1aR_XVr3FCNbLdKi8",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"kenyon.price7@ethereal.email\",\n    \"password\": \"b46Rr5MJTMAbKsvEHj\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:3001/api/login",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001",
+                            "path": [
+                                "api",
+                                "login"
+                            ]
+                        },
+                        "description": "@route POST /api/login \n@desc responds user a token. Content-type: json. "
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Login user",
+                    "id": "95abc3de-df76-406c-978e-61c315814167",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"john@email.com\",\n    \"password\": \"john\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:3001/api/login",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001",
+                            "path": [
+                                "api",
+                                "login"
+                            ]
+                        },
+                        "description": "@route POST /api/login \n@desc responds user a token. Content-type: json. "
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get all users",
+                    "id": "037a0f48-3330-4864-81f7-cc9e1f100716",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNkYzM4OTE4ODc2NzExNDA4YzdkODgiLCJmaXJzdF9uYW1lIjoiRmlyc3QgTmFtZSIsImVtYWlsIjoiZW1haWxAZW1haWwuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTY0MDg3NjEwOH0.DMHGYCbFNEh_z5ikL4GfZjSVBO1aR_XVr3FCNbLdKi8",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:3001/api/users",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001",
+                            "path": [
+                                "api",
+                                "users"
+                            ]
+                        },
+                        "description": "Get all users\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNkYzM4OTE4ODc2NzExNDA4YzdkODgiLCJmaXJzdF9uYW1lIjoiRmlyc3QgTmFtZSIsImVtYWlsIjoiZW1haWxAZW1haWwuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTY0MDg3NjEwOH0.DMHGYCbFNEh_z5ikL4GfZjSVBO1aR_XVr3FCNbLdKi8"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get one user",
+                    "id": "db440355-cd0c-4077-936e-62c249a959b6",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNkYzM4OTE4ODc2NzExNDA4YzdkODgiLCJmaXJzdF9uYW1lIjoiRmlyc3QgTmFtZSIsImVtYWlsIjoiZW1haWxAZW1haWwuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTY0MDg3NjEwOH0.DMHGYCbFNEh_z5ikL4GfZjSVBO1aR_XVr3FCNbLdKi8",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:3001/api/users/61cdc38918876711408c7d88",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001",
+                            "path": [
+                                "api",
+                                "users",
+                                "61cdc38918876711408c7d88"
+                            ]
+                        },
+                        "description": "Get one user\neyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNkYzM4OTE4ODc2NzExNDA4YzdkODgiLCJmaXJzdF9uYW1lIjoiRmlyc3QgTmFtZSIsImVtYWlsIjoiZW1haWxAZW1haWwuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTY0MDg3NjEwOH0.DMHGYCbFNEh_z5ikL4GfZjSVBO1aR_XVr3FCNbLdKi8"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Patch user",
+                    "id": "c2a7d4e6-a21f-4db2-ad4f-80c03c0dab45",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNkYzM4OTE4ODc2NzExNDA4YzdkODgiLCJmaXJzdF9uYW1lIjoiRmlyc3QgTmFtZSIsImVtYWlsIjoiZW1haWxAZW1haWwuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTY0MDg3Njc1NX0.qw2QAHY1o76MLOQnbl3YVSUxbDZ8X3JyX-CkP1e04EM",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:3001/api/users/61cdc9d418876711408c7da2",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001",
+                            "path": [
+                                "api",
+                                "users",
+                                "61cdc9d418876711408c7da2"
+                            ]
+                        },
+                        "description": "Ptach User"
+                    },
+                    "response": []
+                }
+            ],
+            "id": "c63bf96c-77be-4704-b940-4ff2802b4135"
+        },
+        {
+            "name": "Products",
+            "item": [
+                {
+                    "name": "Create a product",
+                    "id": "a16d638c-384a-48a0-a5b7-5b4f37d50814",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNkZDUxYzE4ODc2NzExNDA4YzdkY2EiLCJmaXJzdF9uYW1lIjoiYWRtaW4iLCJlbWFpbCI6Imtlbnlvbi5wcmljZTdAZXRoZXJlYWwuZW1haWwiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjQwODc5Mzk2fQ.pVq-wQ1hElrvq9Fl2doMVRMtZ7Rs9eg530Si5kQIc50",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"product_name\": \"Prueba\",\n    \"description\": \"Best car in the market.\",\n    \"category\": \"car\",\n    \"price\": 6,\n    \"stock\": 4850\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:3001/api/products/",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001",
+                            "path": [
+                                "api",
+                                "products",
+                                ""
+                            ]
+                        },
+                        "description": "Create a product\nPOST http://localhost:3001/api/products"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get all products",
+                    "id": "a521a3f6-f00d-4fec-b297-fa1df7d67a14",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:3001/api/products",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001",
+                            "path": [
+                                "api",
+                                "products"
+                            ]
+                        },
+                        "description": "Get all products\nGET http://localhost:3001/api/products"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get products by category",
+                    "id": "fec5b34b-e716-4f1e-9720-ee3e2a344f42",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNkZDUxYzE4ODc2NzExNDA4YzdkY2EiLCJmaXJzdF9uYW1lIjoiYWRtaW4iLCJlbWFpbCI6Imtlbnlvbi5wcmljZTdAZXRoZXJlYWwuZW1haWwiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjQwODc5Mzk2fQ.pVq-wQ1hElrvq9Fl2doMVRMtZ7Rs9eg530Si5kQIc50",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:3001/api/products/bike",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001",
+                            "path": [
+                                "api",
+                                "products",
+                                "bike"
+                            ]
+                        },
+                        "description": "Get products by category\nGET http://localhost:3001/api/products/bike"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update a product",
+                    "id": "665c090c-04d2-4702-b2a9-29daff1e2bc1",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNkZDUxYzE4ODc2NzExNDA4YzdkY2EiLCJmaXJzdF9uYW1lIjoiYWRtaW4iLCJlbWFpbCI6Imtlbnlvbi5wcmljZTdAZXRoZXJlYWwuZW1haWwiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjQwODc5Mzk2fQ.pVq-wQ1hElrvq9Fl2doMVRMtZ7Rs9eg530Si5kQIc50",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"product_name\": \"Trek City\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:3001/api/products/61cdd5d218876711408c7dd3",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001",
+                            "path": [
+                                "api",
+                                "products",
+                                "61cdd5d218876711408c7dd3"
+                            ]
+                        },
+                        "description": "Update a product\nPATCH http://localhost:3001/api/products/61cdd5d218876711408c7dd3"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete a product",
+                    "id": "b0ae5e89-af45-4152-880c-f4c13af3db96",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNkZDUxYzE4ODc2NzExNDA4YzdkY2EiLCJmaXJzdF9uYW1lIjoiYWRtaW4iLCJlbWFpbCI6Imtlbnlvbi5wcmljZTdAZXRoZXJlYWwuZW1haWwiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjQwODc5Mzk2fQ.pVq-wQ1hElrvq9Fl2doMVRMtZ7Rs9eg530Si5kQIc50",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:3001/api/products/61cdd7cf18876711408c7de2",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001",
+                            "path": [
+                                "api",
+                                "products",
+                                "61cdd7cf18876711408c7de2"
+                            ]
+                        },
+                        "description": "Delete a product\nDELETE http://localhost:3001/api/products/61cdd7cf18876711408c7de2"
+                    },
+                    "response": []
+                }
+            ],
+            "id": "1a94d2c5-d56b-4a95-805f-7f2fe74ab233"
+        },
+        {
+            "name": "Cart",
+            "item": [
+                {
+                    "name": "Get the users cart",
+                    "id": "9e247ba7-62dc-425e-82bb-d82824020f50",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNkZDUxYzE4ODc2NzExNDA4YzdkY2EiLCJmaXJzdF9uYW1lIjoiYWRtaW4iLCJlbWFpbCI6Imtlbnlvbi5wcmljZTdAZXRoZXJlYWwuZW1haWwiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjQwODc5Mzk2fQ.pVq-wQ1hElrvq9Fl2doMVRMtZ7Rs9eg530Si5kQIc50",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:3001/api/cart",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001",
+                            "path": [
+                                "api",
+                                "cart"
+                            ]
+                        },
+                        "description": "Get the users cart\nGET  http://localhost:3001/api/cart"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get all the carts",
+                    "id": "2c23ebfe-73a3-481c-adc2-cf8b39b092bb",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNkZDUxYzE4ODc2NzExNDA4YzdkY2EiLCJmaXJzdF9uYW1lIjoiYWRtaW4iLCJlbWFpbCI6Imtlbnlvbi5wcmljZTdAZXRoZXJlYWwuZW1haWwiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjQwODc5Mzk2fQ.pVq-wQ1hElrvq9Fl2doMVRMtZ7Rs9eg530Si5kQIc50",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:3001/api/cart/all",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001",
+                            "path": [
+                                "api",
+                                "cart",
+                                "all"
+                            ]
+                        },
+                        "description": "Get all the carts\nGET  http://localhost:3001/api/cart/all"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Add product to cart",
+                    "id": "154deec8-73e1-4f4b-b584-b96a5f911f24",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNkZWUzMDk2Mzc5NTFjZDBkMzYxNGIiLCJmaXJzdF9uYW1lIjoiam9obiIsImVtYWlsIjoiam9obkBlbWFpbC5jb20iLCJhZG1pbiI6ZmFsc2UsImlhdCI6MTY0MDg4NTg0OX0.SNvhGnzwUZDEkMoaXLvuwuprCosI5K55rD4x4vECyzg",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"product_id\": \"61cdd59318876711408c7dd1\",\n    \"quantity\": 10\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:3001/api/cart/add",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001",
+                            "path": [
+                                "api",
+                                "cart",
+                                "add"
+                            ]
+                        },
+                        "description": "Add product to cart\nPOST http://localhost:3001/api/cart/add"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete a product from the cart",
+                    "id": "c953e794-e6ee-43a6-ae92-cac238db7274",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNkZDUxYzE4ODc2NzExNDA4YzdkY2EiLCJmaXJzdF9uYW1lIjoiYWRtaW4iLCJlbWFpbCI6Imtlbnlvbi5wcmljZTdAZXRoZXJlYWwuZW1haWwiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjQwODc5Mzk2fQ.pVq-wQ1hElrvq9Fl2doMVRMtZ7Rs9eg530Si5kQIc50",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"product_id\": \"61cdd59318876711408c7dd1\",\n    \"quantity\": 2\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:3001/api/cart/delete",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001",
+                            "path": [
+                                "api",
+                                "cart",
+                                "delete"
+                            ]
+                        },
+                        "description": "Delete a product from the cart\nDELETE http://localhost:3001/api/cart/delete"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Submit a cart with products",
+                    "id": "d9bc6de9-df89-4c2a-809b-0ec304a89a93",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNkZWUzMDk2Mzc5NTFjZDBkMzYxNGIiLCJmaXJzdF9uYW1lIjoiam9obiIsImVtYWlsIjoiam9obkBlbWFpbC5jb20iLCJhZG1pbiI6ZmFsc2UsImlhdCI6MTY0MDg4NTg0OX0.SNvhGnzwUZDEkMoaXLvuwuprCosI5K55rD4x4vECyzg",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:3001/api/cart/submit",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001",
+                            "path": [
+                                "api",
+                                "cart",
+                                "submit"
+                            ]
+                        },
+                        "description": "Submit a cart with products\nPOST http://localhost:3001/api/cart/submit"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Submit a cart without products",
+                    "id": "d89c8b91-d1a0-484a-9a61-919ec8d04178",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNkZDUxYzE4ODc2NzExNDA4YzdkY2EiLCJmaXJzdF9uYW1lIjoiYWRtaW4iLCJlbWFpbCI6Imtlbnlvbi5wcmljZTdAZXRoZXJlYWwuZW1haWwiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjQwODc5Mzk2fQ.pVq-wQ1hElrvq9Fl2doMVRMtZ7Rs9eg530Si5kQIc50",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:3001/api/cart/submit",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001",
+                            "path": [
+                                "api",
+                                "cart",
+                                "submit"
+                            ]
+                        },
+                        "description": "Submit a cart without products\nPOST http://localhost:3001/api/cart/submit"
+                    },
+                    "response": []
+                }
+            ],
+            "id": "eff0e540-f5e5-445f-8805-910aa8aedc25"
+        },
+        {
+            "name": "Orders",
+            "item": [
+                {
+                    "name": "Get all the orders of the user",
+                    "id": "b468b8eb-f8a3-4a4b-8762-e942a18a41c2",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNkZWUzMDk2Mzc5NTFjZDBkMzYxNGIiLCJmaXJzdF9uYW1lIjoiam9obiIsImVtYWlsIjoiam9obkBlbWFpbC5jb20iLCJhZG1pbiI6ZmFsc2UsImlhdCI6MTY0MDg4NTg0OX0.SNvhGnzwUZDEkMoaXLvuwuprCosI5K55rD4x4vECyzg",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:3001/api/orders",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001",
+                            "path": [
+                                "api",
+                                "orders"
+                            ]
+                        },
+                        "description": "Get all the orders of the user\nGET http://localhost:3001/api/orders"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get one of the orders of the user",
+                    "id": "0168c10c-cddb-4bda-acb8-5d235435bf1a",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNkZDUxYzE4ODc2NzExNDA4YzdkY2EiLCJmaXJzdF9uYW1lIjoiYWRtaW4iLCJlbWFpbCI6Imtlbnlvbi5wcmljZTdAZXRoZXJlYWwuZW1haWwiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjQwODc5Mzk2fQ.pVq-wQ1hElrvq9Fl2doMVRMtZ7Rs9eg530Si5kQIc50",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:3001/api/orders/61cddade18876711408c7dfa",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001",
+                            "path": [
+                                "api",
+                                "orders",
+                                "61cddade18876711408c7dfa"
+                            ]
+                        },
+                        "description": "Get one of the orders of the user\nGET http://localhost:3001/api/orders/61cddade18876711408c7dfa"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Complete one of the orders",
+                    "id": "4f092d26-e9c6-434a-aa8d-044127a93e30",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNkZDUxYzE4ODc2NzExNDA4YzdkY2EiLCJmaXJzdF9uYW1lIjoiYWRtaW4iLCJlbWFpbCI6Imtlbnlvbi5wcmljZTdAZXRoZXJlYWwuZW1haWwiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjQwODc5Mzk2fQ.pVq-wQ1hElrvq9Fl2doMVRMtZ7Rs9eg530Si5kQIc50",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"id\": \"61cddade18876711408c7dfa\"\n}\n",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:3001/api/orders/complete",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001",
+                            "path": [
+                                "api",
+                                "orders",
+                                "complete"
+                            ]
+                        },
+                        "description": "Complete one of the orders\nPOST http://localhost:3001/api/orders/complete"
+                    },
+                    "response": []
+                }
+            ],
+            "id": "d2779847-0e8f-4e32-a313-e071280598d8"
+        }
+    ]
+}
