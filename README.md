@@ -5,7 +5,7 @@
 
 ## Configurar .env
 
--PORT=3001
+- PORT=3001
 - MONGO_URI= url a db
 - JWT_SECRET=shhhhhhhhhhh
 
